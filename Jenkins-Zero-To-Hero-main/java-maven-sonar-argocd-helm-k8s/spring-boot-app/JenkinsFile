@@ -57,9 +57,12 @@ pipeline {
                     git config user.name "meenakayathiri"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    git add Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-					git add deployment.yml
+                    echo "replaced"
+					git add Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+					echo "git added"
+					git status 
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+					echo "git committed"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
             }
