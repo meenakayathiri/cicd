@@ -61,7 +61,7 @@ pipeline {
 					git add Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
 					echo "git added"
 					git status 
-                    git add Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+					echo "git status"
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
 					echo "git committed"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
