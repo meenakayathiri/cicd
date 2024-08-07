@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: evertz2022/devops:13
+        image: evertz2022/devops:11
         ports:
         - containerPort: 8080
