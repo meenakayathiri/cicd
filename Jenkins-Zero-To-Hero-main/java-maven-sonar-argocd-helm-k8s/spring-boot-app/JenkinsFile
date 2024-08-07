@@ -60,6 +60,7 @@ pipeline {
                     echo "replaced"
 					git add Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
 					echo "git added"
+					git add --all
 					git status 
 					echo "git status"
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
